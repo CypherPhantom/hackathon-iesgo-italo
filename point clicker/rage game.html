@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Rage Click — Jogo</title>
+<link rel="stylesheet" href="assets/style.css">
+<script src="script.js" defer></script> 
+
+
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <h1>Rage Click</h1>
+    <p class="small">Clique no círculo móvel. Erros são contabilizados; cada acerto torna o jogo mais difícil.</p>
+
+    <div style="position:relative;margin-top:12px">
+      <canvas id="game" width="900" height="600"></canvas>
+
+      <div id="overlay" style="position:absolute;left:14px;top:14px;z-index:8"></div>
+      <div id="gameover" class="game-over" style="display:none;z-index:9">
+        <h2>Game Over</h2>
+        <p id="finalstats" class="small"></p>
+        <div style="height:14px"></div>
+        <button id="restartBtn" class="primary">Reiniciar</button>
+      </div>
+    </div>
+
+    <div class="footer">Dica: clique rápido, mire no centro. A cada acerto o alvo diminui e acelera — prepare-se para ficar com raiva 😅</div>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <div class="stat"><span>Acertos</span><span id="hits" class="big">0</span></div>
+      <div class="stat"><span>Erros</span><span id="misses" class="big">0</span></div>
+      <div class="stat"><span>Nível</span><span id="level" class="big">1</span></div>
+      <div style="margin-top:8px">
+        <div class="small">Dificuldade</div>
+        <div class="level-bar" aria-hidden="true"><i id="difficultyFill" style="width:20%"></i></div>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn" class="primary">Iniciar Jogo</button>
+        <button id="pauseBtn">Pausar</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <div class="hud" style="margin-top:8px">
+        <div class="small">Configurações rápidas</div>
+        <label class="small">Tamanho inicial:
+          <input id="baseSize" type="range" min="20" max="120" value="60" />
+        </label>
+        <label class="small">Velocidade base:
+          <input id="baseSpeed" type="range" min="0.5" max="8" step="0.1" value="2" />
+        </label>
+        <label class="small">Erros para game over:
+          <input id="maxMiss" type="number" min="1" max="999" value="15" style="width:70px"/>
+        </label>
+      </div>
+      <div class="footer">Criado para frustração divertida — ajuste as configurações para aumentar o caos.</div>
+    </div>
+  </div>
+</div>
+
+<div id="flash" class="flash error"></div>
+
+
+</body>
+
+
+</html>

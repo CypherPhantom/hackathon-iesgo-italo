@@ -1,0 +1,28 @@
+
+  :root{
+    --bg:#0b1020;
+    --panel:#0f1724;
+    --accent:#ff4d4d;
+    --ok:#6ef07a;
+    --muted:#93a0b2;
+  }
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#051023 0%, #071426 60%);color:#e6eef8}
+  .wrap{max-width:980px;margin:28px auto;padding:18px;display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:14px;border-radius:12px;box-shadow: 0 6px 18px rgba(2,6,23,0.6)}
+  canvas{display:block;background:linear-gradient(180deg,#071426,#061526);border-radius:8px;width:100%;height:600px;cursor:crosshair}
+  h1{margin:0 0 10px;font-size:20px}
+  .info{display:flex;flex-direction:column;gap:8px}
+  .stat{display:flex;justify-content:space-between;align-items:center;padding:8px;border-radius:8px;background:rgba(255,255,255,0.02);font-weight:600}
+  .big{font-size:20px}
+  .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  button{background:#172431;color:#e6eef8;padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+  button.primary{background:linear-gradient(90deg,var(--accent),#ff7b7b);border:none;color:#071426;font-weight:700}
+  .small{font-size:13px;color:var(--muted)}
+  .flash{position:fixed;inset:0;pointer-events:none;opacity:0;transition:opacity .15s;mix-blend-mode:screen}
+  .flash.error{background:linear-gradient(180deg, rgba(255,0,0,0.15), rgba(255,0,0,0.06))}
+  .hud{display:flex;flex-direction:column;gap:6px}
+  .footer{font-size:12px;color:var(--muted);margin-top:12px}
+  .center{display:flex;align-items:center;justify-content:center}
+  .game-over{position:absolute;inset:0;background:rgba(2,6,23,0.8);display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff;border-radius:8px}
+  .level-bar{height:10px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden}
+  .level-bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--ok),#ffd86b);width:20%}
